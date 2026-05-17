@@ -189,7 +189,7 @@ const Home = () => {
         </motion.h1>
 
         {/* Hero Image Container */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 120 }}
           animate={{ opacity: 1, y: 0 }}
           // Spring physics give a subtle, natural bounce to the image settling
@@ -206,9 +206,9 @@ const Home = () => {
             alt="Hero Portrait"
             className="h-full w-auto object-contain grayscale contrast-110 drop-shadow-2xl"
           />
-          {/* Base Shadow attached exactly to the bottom of the image container */}
+          Base Shadow attached exactly to the bottom of the image container
           <div className="absolute bottom-0 h-8 w-[60%] max-w-[300px] rounded-[100%] bg-black/50 blur-2xl"></div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Bottom Fade */}
