@@ -6,6 +6,7 @@ import LongForm from "./components/LongForm";
 import MotionGraphics from "./components/MotionGraphics";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import VideoPortfolio from "./components/VideoPortfolio";
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
       <Navbar />
       <Hero />
       <Stats />
-      <FeaturedWork />
-      <LongForm />
-      <MotionGraphics />
+      {/* <FeaturedWork /> */}
+      <VideoPortfolio />
+      {/* <LongForm />
+      <MotionGraphics /> */}
       <Contact />
       <Footer />
     </div>

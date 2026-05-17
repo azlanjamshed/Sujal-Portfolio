@@ -181,7 +181,7 @@ const Home = () => {
             absolute z-0 m-0 
             bg-gradient-to-b from-[#111111] from-40% to-[#d96561] 
             bg-clip-text text-center 
-            font-['Bebas_Neue',_sans-serif] text-[28vw] leading-[0.8] tracking-tight 
+            font-['Bebas_Neue',_sans-serif] text-[28vw] leading-[0.9] tracking-tight 
             text-transparent select-none
           "
         >
