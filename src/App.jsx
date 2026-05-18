@@ -7,6 +7,7 @@ import MotionGraphics from "./components/MotionGraphics";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import VideoPortfolio from "./components/VideoPortfolio";
+import StackCards from "./components/stack";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Hero />
       <Stats />
       {/* <FeaturedWork /> */}
+      <StackCards />
       <VideoPortfolio />
       {/* <LongForm />
       <MotionGraphics /> */}
