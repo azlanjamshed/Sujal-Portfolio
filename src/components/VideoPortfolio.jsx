@@ -172,50 +172,50 @@ const videos = [
     id: 1,
     title: "Joseph",
     // type: "Mobile",
-    src: "https://ik.imagekit.io/azlan/Sujal/Joseph.mp4",
+    src: "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185835/Joseph_ui_n79gdq.mp4",
     // div 1: 1 column wide, 4 rows tall
-    gridClass: "lg:col-span-3  lg:row-span-3 lg:col-start-1 lg:row-start-1",
+    gridClass: "lg:col-span-2  lg:row-span-2 lg:col-start-1 lg:row-start-4",
   },
 
   {
     id: 2,
     title: "Saas",
     // type: "Landscape",
-    src: "https://ik.imagekit.io/azlan/Sujal/Saas.mp4",
+    src: "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185821/Saas_upwee2.mp4",
     // div 2: 2 columns wide, 2 rows tall
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-4",
+    gridClass: "lg:col-span-4  lg:row-span-3 lg:col-start-5 lg:row-start-1",
   },
   {
     id: 3,
     title: "Bart",
     // type: "Landscape",
-    src: "https://ik.imagekit.io/azlan/Sujal/bart%20%20.mp4",
+    src: "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185821/bart_kkiwmi.mp4",
     // div 3: 2 columns wide, 2 rows tall
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-4 lg:row-start-1",
+    gridClass: "lg:col-span-2  lg:row-span-2 lg:col-start-3 lg:row-start-4",
   },
   {
     id: 4,
     title: "Trading",
     // type: "Landscape",
-    src: "https://ik.imagekit.io/azlan/Sujal/trading%20.mp4",
+    src: "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185821/trading_tij2zv.mp4",
     // div 4: 2 columns wide, 2 rows tall
-    gridClass: "lg:col-span-3  lg:row-span-3  lg:col-start-4 lg:row-start-3",
+    gridClass: "lg:col-span-2  lg:row-span-2 lg:col-start-5 lg:row-start-4",
   },
   {
     id: 5,
     title: "Apple",
     // type: "Landscape",
-    src: "https://ik.imagekit.io/azlan/Sujal/apple.mp4",
+    src: "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185820/apple_atvm4a.mp4",
     // div 5: 2 columns wide, 2 rows tall
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-6 lg:row-start-1",
+    gridClass: "lg:col-span-2  lg:row-span-2 lg:col-start-7 lg:row-start-4",
   },
   {
     id: 6,
-    title: "Swiggy",
+    title: "Gemini",
     // type: "Mobile",
-    src: "https://ik.imagekit.io/azlan/Sujal/swigy.mp4",
+    src: "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185836/gemini_ad_m5bb2m.mp4",
     // div 1: 1 column wide, 4 rows tall
-    gridClass: "lg:col-span-1  lg:row-span-4 lg:col-start-3 lg:row-start-4",
+    gridClass: "lg:col-span-4  lg:row-span-3 lg:col-start-1 lg:row-start-1",
   },
 ];
 // const videos = [
@@ -328,7 +328,26 @@ const WorkGrid = () => {
 
       {/* Your Custom Layout Grid */}
       {/* On mobile it is 1 column. On 'lg' screens, it becomes your exact 5x4 grid */}
-      <div className="mx-auto grid grid-cols-1  lg:h-[800px] lg:grid-cols-6 lg:grid-rows-5">
+      {/* <div className="mx-auto grid grid-cols-1  lg:h-[800px] lg:grid-cols-6 lg:grid-rows-5">
+        {videos.map((video) => (
+          // <VideoCard
+          //   key={video.id}
+          //   video={video}
+          //   setSelectedVideo={setSelectedVideo}
+          // />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="w-full h-full object-cover"
+          >
+            <source src={video.src} type="video/mp4" />
+          </video>
+        ))}
+      </div> */}
+      <div className="mx-auto grid grid-cols-1  lg:h-[800px] lg:grid-cols-8 lg:grid-rows-4">
         {videos.map((video) => (
           <VideoCard
             key={video.id}
