@@ -141,7 +141,10 @@ const labelVariants = {
 
 const Home = () => {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f5f5f5] font-['Inter',_sans-serif]">
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f5f5f5] font-['Inter',_sans-serif]"
+    >
       {/* Texture Background with Blend Mode */}
       <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/concrete-wall.png')] opacity-30 mix-blend-multiply pointer-events-none"></div>
 

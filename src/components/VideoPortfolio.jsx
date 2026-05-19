@@ -170,19 +170,20 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 const videos = [
   {
     id: 1,
-    title: "Swiggy",
+    title: "Joseph",
     // type: "Mobile",
-    src: "https://ik.imagekit.io/azlan/Sujal/swigy.mp4",
+    src: "https://ik.imagekit.io/azlan/Sujal/Joseph.mp4",
     // div 1: 1 column wide, 4 rows tall
-    gridClass: "lg:col-span-2  lg:row-span-4 lg:col-start-1 lg:row-start-1",
+    gridClass: "lg:col-span-3  lg:row-span-3 lg:col-start-1 lg:row-start-1",
   },
+
   {
     id: 2,
     title: "Saas",
     // type: "Landscape",
     src: "https://ik.imagekit.io/azlan/Sujal/Saas.mp4",
     // div 2: 2 columns wide, 2 rows tall
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-1",
+    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-4",
   },
   {
     id: 3,
@@ -190,7 +191,7 @@ const videos = [
     // type: "Landscape",
     src: "https://ik.imagekit.io/azlan/Sujal/bart%20%20.mp4",
     // div 3: 2 columns wide, 2 rows tall
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-1",
+    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-4 lg:row-start-1",
   },
   {
     id: 4,
@@ -198,7 +199,7 @@ const videos = [
     // type: "Landscape",
     src: "https://ik.imagekit.io/azlan/Sujal/trading%20.mp4",
     // div 4: 2 columns wide, 2 rows tall
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-3",
+    gridClass: "lg:col-span-3  lg:row-span-3  lg:col-start-4 lg:row-start-3",
   },
   {
     id: 5,
@@ -206,9 +207,60 @@ const videos = [
     // type: "Landscape",
     src: "https://ik.imagekit.io/azlan/Sujal/apple.mp4",
     // div 5: 2 columns wide, 2 rows tall
-    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-3",
+    gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-6 lg:row-start-1",
+  },
+  {
+    id: 6,
+    title: "Swiggy",
+    // type: "Mobile",
+    src: "https://ik.imagekit.io/azlan/Sujal/swigy.mp4",
+    // div 1: 1 column wide, 4 rows tall
+    gridClass: "lg:col-span-1  lg:row-span-4 lg:col-start-3 lg:row-start-4",
   },
 ];
+// const videos = [
+//   {
+//     id: 1,
+//     title: "Swiggy",
+//     // type: "Mobile",
+//     src: "https://ik.imagekit.io/azlan/Sujal/swigy.mp4",
+//     // div 1: 1 column wide, 4 rows tall
+//     gridClass: "lg:col-span-2  lg:row-span-4 lg:col-start-1 lg:row-start-1",
+//   },
+
+//   {
+//     id: 2,
+//     title: "Saas",
+//     // type: "Landscape",
+//     src: "https://ik.imagekit.io/azlan/Sujal/Saas.mp4",
+//     // div 2: 2 columns wide, 2 rows tall
+//     gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-1",
+//   },
+//   {
+//     id: 3,
+//     title: "Bart",
+//     // type: "Landscape",
+//     src: "https://ik.imagekit.io/azlan/Sujal/bart%20%20.mp4",
+//     // div 3: 2 columns wide, 2 rows tall
+//     gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-1",
+//   },
+//   {
+//     id: 4,
+//     title: "Trading",
+//     // type: "Landscape",
+//     src: "https://ik.imagekit.io/azlan/Sujal/trading%20.mp4",
+//     // div 4: 2 columns wide, 2 rows tall
+//     gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-3",
+//   },
+//   {
+//     id: 5,
+//     title: "Apple",
+//     // type: "Landscape",
+//     src: "https://ik.imagekit.io/azlan/Sujal/apple.mp4",
+//     // div 5: 2 columns wide, 2 rows tall
+//     gridClass: "lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-3",
+//   },
+// ];
 
 // --- Individual Video Card ---
 const VideoCard = ({ video, setSelectedVideo }) => {
@@ -244,7 +296,7 @@ const VideoCard = ({ video, setSelectedVideo }) => {
         loop
         playsInline
         // object-cover ensures the video fills its specific grid block perfectly
-        className="h-full w-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+        className="h-full w-full object-center opacity-80 transition-opacity duration-500 group-hover:opacity-100"
       />
 
       {/* Title Overlay */}
@@ -263,23 +315,20 @@ const WorkGrid = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
-    <section
-      id="work"
-      className="relative min-h-screen bg-[#f5f5f5] py-20 px-6 lg:px-20 font-['Inter',_sans-serif]"
-    >
+    <section className="relative min-h-screen bg-[#f5f5f5] py-20 px-6 lg:px-20 font-['Inter',_sans-serif]">
       {/* <div className="mx-auto max-w-7xl mb-12">
         <h2 className="text-5xl md:text-7xl font-black tracking-tight font-['Bebas_Neue',_sans-serif] text-[#111111]">
           SELECTED WORKS
         </h2> */}
-      <div className="text-center mb-20">
+      {/* <div className="text-center mb-20">
         <h2 className="text-6xl md:text-7xl font-black mb-6 font-['Bebas_Neue',_sans-serif] text-[#111111]">
           Featured Work
         </h2>
-      </div>
+      </div> */}
 
       {/* Your Custom Layout Grid */}
       {/* On mobile it is 1 column. On 'lg' screens, it becomes your exact 5x4 grid */}
-      <div className="mx-auto grid grid-cols-1  lg:h-[800px] lg:grid-cols-6 lg:grid-rows-4">
+      <div className="mx-auto grid grid-cols-1  lg:h-[800px] lg:grid-cols-6 lg:grid-rows-5">
         {videos.map((video) => (
           <VideoCard
             key={video.id}

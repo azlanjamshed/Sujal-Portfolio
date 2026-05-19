@@ -24,7 +24,7 @@ const FeaturedWork = () => {
   return (
     <section id="work" className="py-32 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+        {/* <div className="text-center mb-20">
           <h2 className="text-6xl md:text-7xl font-black mb-6">
             Featured Work
           </h2>
@@ -33,7 +33,7 @@ const FeaturedWork = () => {
             Viral short-form edits crafted for storytelling, retention, and
             engagement.
           </p>
-        </div>
+        </div> */}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video, index) => (

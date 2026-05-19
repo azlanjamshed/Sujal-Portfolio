@@ -23,6 +23,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   // Container variants to control the staggered reveal of the links
@@ -47,6 +48,10 @@ const Navbar = () => {
     },
   };
 
+  const items = [
+    { index: 1, name: "Works", id: "work" },
+    { index: 2, name: "Conatct", id: "contact" },
+  ];
   return (
     // 1. The whole nav bar drops down smoothly from the top
     <motion.nav
@@ -59,13 +64,15 @@ const Navbar = () => {
         {/* 2. Logo slides in from the left */}
         <motion.h1
           initial={{ opacity: 0, x: -20 }}
+          href={`#${"home"}`}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl font-bold"
+          className="text-4xl font-bold cursor-pointer"
         >
-          SUJAL
+          <Link to="home" smooth={true} duration={300} spy={true} offset={-70}>
+            SUJAL
+          </Link>
         </motion.h1>
-
         {/* 3. Links use the staggered container variants */}
         <motion.div
           variants={navContainerVariants}
@@ -73,30 +80,46 @@ const Navbar = () => {
           animate="visible"
           className="hidden md:flex gap-10 text-sm font-medium"
         >
-          {["Work", "Longform", "Motion", "Contact"].map((item) => (
+          {items.map((item) => (
             <motion.a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.index}
+              // href={`#${item.toLowerCase()}`}
               variants={linkVariants}
               whileHover={{ y: -2, color: "#666" }} // Subtle lift on hover
               className="cursor-pointer transition-colors duration-300"
             >
-              {item}
+              <Link
+                to={item.id}
+                smooth={true}
+                duration={300}
+                spy={true}
+                offset={-70}
+                activeClass="text-[#d96561]"
+              >
+                {item.name}
+              </Link>
             </motion.a>
           ))}
         </motion.div>
-
         {/* 4. Button pops in, replacing Tailwind hover with Framer physics */}
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.5, type: "spring" }}
+          transition={{ duration: 0.5, delay: 0, type: "spring" }}
           whileHover={{ scale: 1.05 }} // Framer handles the hover scale smoother than Tailwind
           whileTap={{ scale: 0.95 }} // Satisfying click effect
-          className="bg-black text-white px-6 py-3 rounded-full"
+          className="bg-black text-white px-6 py-3 rounded-full cursor-pointer"
         >
-          Hire Me
-        </motion.button>
+          <Link
+            to="contact"
+            smooth={true}
+            duration={300}
+            spy={true}
+            offset={-70}
+          >
+            Hire Me
+          </Link>
+        </motion.div>
       </div>
     </motion.nav>
   );

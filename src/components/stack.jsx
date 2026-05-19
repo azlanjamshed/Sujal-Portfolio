@@ -258,52 +258,56 @@ const ProjectStack = () => {
   const projects = [
     {
       id: 1,
-      title: "Alto - Exchange Showcase",
+      title: "Joseph UI",
       subtitle: "motion",
       year: "2026",
-      color: "bg-[#111111]",
-      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
+      color: "bg-[#8a1c59]",
+      videoSrc: "https://ik.imagekit.io/azlan/Sujal/Joseph.mp4",
     },
     {
       id: 2,
-      title: "Fintech App UI",
+      title: "Saas",
       subtitle: "ui/ux",
       year: "2025",
-      color: "bg-[#8a1c59]",
-      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
+      color: "bg-[#111111]",
+      videoSrc:
+        "https://ik.imagekit.io/azlan/Sujal/Saas.mp4?updatedAt=1779057097273",
     },
     {
       id: 3,
-      title: "Crypto Dashboard",
+      title: "Bart",
       subtitle: "web",
       year: "2025",
-      color: "bg-[#1a1a1a]",
-      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
+      color: "bg-[#8a1c59]",
+      videoSrc:
+        "https://ik.imagekit.io/azlan/Sujal/bart%20%20.mp4?updatedAt=1779057095685",
     },
     {
       id: 4,
-      title: "Brand Anthem",
+      title: "Trading",
       subtitle: "directing",
       year: "2024",
       color: "bg-[#f5f5f5]",
-      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
+      videoSrc:
+        "https://ik.imagekit.io/azlan/Sujal/trading%20.mp4?updatedAt=1779057095245",
     },
     {
       id: 5,
-      title: "E-Commerce Experience",
+      title: "Apple",
       subtitle: "web 3D",
       year: "2026",
-      color: "bg-[#111111]",
-      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
-    {
-      id: 6,
-      title: "Data Visualizer",
-      subtitle: "dashboard",
-      year: "2025",
       color: "bg-[#8a1c59]",
-      videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
+      videoSrc:
+        "https://ik.imagekit.io/azlan/Sujal/apple.mp4?updatedAt=1779057094492",
     },
+    // {
+    //   id: 6,
+    //   title: "Data Visualizer",
+    //   subtitle: "dashboard",
+    //   year: "2025",
+    //   color: "bg-[#8a1c59]",
+    //   videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
+    // },
   ];
 
   // The automated index that cycles infinitely
@@ -313,13 +317,16 @@ const ProjectStack = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    }, 500);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [projects.length]);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#0a0514] px-5 pt-20 md:pt-10 md:px-10 lg:px-24 font-['Inter',_sans-serif]">
+    <section
+      id="work"
+      className="relative min-h-screen w-full overflow-hidden bg-[#0a0514] px-5 pt-20 md:pt-10 md:px-10 lg:px-24 font-['Inter',_sans-serif]"
+    >
       <div className="mx-auto flex w-full max-w-[1600px] flex-col items-center justify-between gap-16 lg:flex-row">
         {/* --- LEFT CONTENT (Now Static) --- */}
         <div className="relative z-20 flex w-full flex-col justify-center lg:w-[38%]">
@@ -371,7 +378,7 @@ const ProjectStack = () => {
                 animate={{
                   // Keep it in 3D perspective at all times
                   rotateX: 55,
-                  rotateZ: -35,
+                  rotateZ: -15,
 
                   // If active, slide it up and left diagonally from its spot
                   y: isActive ? stackedY - 40 : stackedY,
