@@ -242,6 +242,7 @@
 //------------------------------------------------------------------//
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 const ProjectStack = () => {
   // Safe Responsive State
@@ -258,56 +259,58 @@ const ProjectStack = () => {
   const projects = [
     {
       id: 1,
-      title: "Joseph UI",
-      subtitle: "motion",
+      // subtitle: "Joseph UI",
+      title: "Motion Graphics",
       year: "2026",
       color: "bg-[#8a1c59]",
-      videoSrc: "https://ik.imagekit.io/azlan/Sujal/Joseph.mp4",
+      videoSrc:
+        "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185835/Joseph_ui_n79gdq.mp4",
     },
     {
       id: 2,
+      // subtitle: "Saas",
       title: "Saas",
-      subtitle: "ui/ux",
       year: "2025",
       color: "bg-[#111111]",
       videoSrc:
-        "https://ik.imagekit.io/azlan/Sujal/Saas.mp4?updatedAt=1779057097273",
+        "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185821/Saas_upwee2.mp4",
     },
     {
       id: 3,
-      title: "Bart",
-      subtitle: "web",
+      // subtitle: "Bart",
+      title: "Apple UI",
       year: "2025",
       color: "bg-[#8a1c59]",
       videoSrc:
-        "https://ik.imagekit.io/azlan/Sujal/bart%20%20.mp4?updatedAt=1779057095685",
+        "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185821/bart_kkiwmi.mp4",
     },
     {
       id: 4,
-      title: "Trading",
-      subtitle: "directing",
+      // subtitle: "Trading",
+      title: "Motion Graphics",
       year: "2024",
       color: "bg-[#f5f5f5]",
       videoSrc:
-        "https://ik.imagekit.io/azlan/Sujal/trading%20.mp4?updatedAt=1779057095245",
+        "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185821/trading_tij2zv.mp4",
     },
     {
       id: 5,
-      title: "Apple",
-      subtitle: "web 3D",
+      // subtitle: "Apple",
+      title: "Apple UI",
       year: "2026",
       color: "bg-[#8a1c59]",
       videoSrc:
-        "https://ik.imagekit.io/azlan/Sujal/apple.mp4?updatedAt=1779057094492",
+        "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185820/apple_atvm4a.mp4",
     },
-    // {
-    //   id: 6,
-    //   title: "Data Visualizer",
-    //   subtitle: "dashboard",
-    //   year: "2025",
-    //   color: "bg-[#8a1c59]",
-    //   videoSrc: "https://www.w3schools.com/html/mov_bbb.mp4",
-    // },
+    {
+      id: 6,
+      // title: "Gemini",
+      title: "Saas",
+      year: "2025",
+      color: "bg-[#8a1c59]",
+      videoSrc:
+        "https://res.cloudinary.com/dcufuk0qt/video/upload/q_auto/f_auto/v1779185836/gemini_ad_m5bb2m.mp4",
+    },
   ];
 
   // The automated index that cycles infinitely
@@ -323,41 +326,303 @@ const ProjectStack = () => {
   }, [projects.length]);
 
   return (
+    // <section
+    //   id="work"
+    //   className="relative min-h-screen w-full overflow-hidden bg-[#0a0514] px-5 pt-20 md:pt-10 md:px-10 lg:px-24 font-['Inter',_sans-serif]"
+    // >
+    //   <div className="mx-auto flex w-full max-w-[1600px] flex-col items-center justify-between gap-16 lg:flex-row">
+    //     {/* --- LEFT CONTENT (Now Static) --- */}
+    //     <div className="relative z-20 flex w-full flex-col justify-center lg:w-[38%]">
+    //       <div className="text-white">
+    //         <span className="mb-6 block text-xs uppercase tracking-[4px] text-gray-500 md:text-sm">
+    //           Archive
+    //         </span>
+    //         <h2 className="mb-5 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+    //           Selected Works
+    //         </h2>
+    //         <p className="max-w-xl text-base leading-relaxed text-gray-400 sm:text-lg md:text-xl">
+    //           A curated collection of featured projects, cinematic reels, and
+    //           immersive interactive experiences spanning motion design, web
+    //           development, and 3D.
+    //         </p>
+    //       </div>
+    //     </div>
+
+    //     {/* --- RIGHT STACK (Automated Infinite Loop) --- */}
+    //     <div
+    //       className="
+    //         relative flex w-full items-center justify-center -mr-50
+    //         h-[500px] sm:h-[600px] md:h-[700px] lg:h-[850px] lg:w-[55%]
+    //         pointer-events-none /* Prevents user clicks from interrupting the flow */
+    //       "
+    //       style={{ perspective: "2200px" }}
+    //     >
+    //       {projects.map((project, index) => {
+    //         const isActive = activeIndex === index;
+
+    //         // Base position in the stack
+    //         const stackedY =
+    //           screenWidth < 640
+    //             ? index * 18
+    //             : screenWidth < 1024
+    //               ? index * 28
+    //               : index * 38;
+
+    //         const stackedX =
+    //           screenWidth < 640
+    //             ? index * -18
+    //             : screenWidth < 1024
+    //               ? index * -28
+    //               : index * -40;
+
+    //         return (
+    //           <motion.div
+    //             key={project.id}
+    //             animate={{
+    //               // Keep it in 3D perspective at all times
+    //               rotateX: 55,
+    //               rotateZ: -15,
+
+    //               // If active, slide it up and left diagonally from its spot
+    //               y: isActive ? stackedY - 40 : stackedY,
+    //               x: isActive ? stackedX - 50 : stackedX,
+
+    //               // Slight scale for emphasis
+    //               scale: isActive ? 1.05 : 1,
+
+    //               // Keep normal z-index stacking
+    //               zIndex: projects.length - index,
+    //             }}
+    //             transition={{
+    //               type: "spring",
+    //               stiffness: 70,
+    //               damping: 15,
+    //               mass: 1,
+    //             }}
+    //             style={{ transformOrigin: "center center" }}
+    //             className={`
+    //               absolute overflow-hidden rounded-[28px]
+    //               shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)]
+    //               ${project.color}
+    //               w-[220px] h-[150px]
+    //               sm:w-[300px] sm:h-[200px]
+    //               md:w-[420px] md:h-[280px]
+    //               lg:w-[520px] lg:h-[340px]
+    //             `}
+    //           >
+    //             {/* Optional: You can keep videos auto-playing when they pop out */}
+    //             <AnimatePresence>
+    //               {isActive && (
+    //                 <motion.video
+    //                   initial={{ opacity: 0 }}
+    //                   animate={{ opacity: 1 }}
+    //                   exit={{ opacity: 0 }}
+    //                   transition={{ duration: 0.6 }}
+    //                   src={project.videoSrc}
+    //                   autoPlay
+    //                   muted
+    //                   loop
+    //                   playsInline
+    //                   className="absolute inset-0 h-full w-full object-cover"
+    //                 />
+    //               )}
+    //             </AnimatePresence>
+
+    //             <div className="absolute inset-0 bg-black/30" />
+
+    //             {/* TEXT */}
+    //             <div className="relative flex h-full flex-col justify-between p-5 md:p-8">
+    //               <div className="flex items-center justify-between">
+    //                 <span className="text-[10px] uppercase tracking-[3px] text-white/60 md:text-xs">
+    //                   {project.subtitle}
+    //                 </span>
+    //                 <span className="text-[10px] text-white/60 md:text-xs">
+    //                   {project.year}
+    //                 </span>
+    //               </div>
+    //               <div>
+    //                 <h3 className="max-w-[80%] text-lg font-bold leading-tight text-white sm:text-2xl md:text-3xl">
+    //                   {project.title}
+    //                 </h3>
+    //               </div>
+    //             </div>
+
+    //             <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/10 to-purple-500/10 opacity-0 transition duration-500 group-hover:opacity-100" />
+    //           </motion.div>
+    //         );
+    //       })}
+    //     </div>
+    //   </div>
+    // </section>
     <section
       id="work"
-      className="relative min-h-screen w-full overflow-hidden bg-[#0a0514] px-5 pt-20 md:pt-10 md:px-10 lg:px-24 font-['Inter',_sans-serif]"
+      className="
+    relative
+    min-h-screen
+    w-full
+    overflow-hidden
+    bg-[#00181C]
+    px-5
+    pt-20
+
+    md:px-10
+    md:pt-10
+
+    lg:px-24
+
+    font-['Inter',_sans-serif]
+  "
     >
-      <div className="mx-auto flex w-full max-w-[1600px] flex-col items-center justify-between gap-16 lg:flex-row">
-        {/* --- LEFT CONTENT (Now Static) --- */}
-        <div className="relative z-20 flex w-full flex-col justify-center lg:w-[38%]">
+      {/* Background Glow */}
+      <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FF4E75]/10 blur-[120px]" />
+
+      {/* Texture */}
+      <div className="absolute inset-0 opacity-[0.04] bg-[url('https://www.transparenttextures.com/patterns/concrete-wall.png')]" />
+
+      <div
+        className="
+      relative
+      z-10
+      mx-auto
+      flex
+      w-full
+      max-w-[1600px]
+      flex-col
+      items-center
+      justify-between
+      gap-16
+
+      lg:flex-row
+    "
+      >
+        {/* LEFT CONTENT */}
+        <div
+          className="
+        relative
+        z-20
+        flex
+        w-full
+        flex-col
+        justify-center
+        items-start
+
+        lg:w-[38%]
+      "
+        >
           <div className="text-white">
-            <span className="mb-6 block text-xs uppercase tracking-[4px] text-gray-500 md:text-sm">
+            <span
+              className="
+            mb-6
+            block
+            text-[11px]
+            uppercase
+            tracking-[4px]
+            text-[#FF4E75]
+
+            md:text-sm
+          "
+            >
               Archive
             </span>
-            <h2 className="mb-5 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+
+            <h2
+              className="
+            mb-5
+            font-['Bebas_Neue',_sans-serif]
+            text-4xl
+            leading-[0.9]
+            tracking-tight
+            text-white
+
+            sm:text-5xl
+
+            md:text-6xl
+          "
+            >
               Selected Works
             </h2>
-            <p className="max-w-xl text-base leading-relaxed text-gray-400 sm:text-lg md:text-xl">
+
+            <p
+              className="
+            max-w-xl
+            text-sm
+            leading-relaxed
+            text-white/60
+
+            sm:text-base
+
+            md:text-lg
+          "
+            >
               A curated collection of featured projects, cinematic reels, and
               immersive interactive experiences spanning motion design, web
               development, and 3D.
             </p>
           </div>
+          <NavLink
+            to={"/projects"}
+            className="
+                  group
+                  relative
+                  cursor-pointer
+                  overflow-hidden
+
+                  rounded-full
+
+                  border
+                  border-[#FF4E75]/30
+
+                  bg-[#FF4E75]
+
+                  px-7
+                  py-3
+
+                  text-sm
+                  font-medium
+                  uppercase
+                  tracking-[3px]
+                  text-white
+
+                  shadow-[0_15px_40px_rgba(255,78,117,0.35)]
+
+                  transition-all
+                  duration-500
+                  mt-5
+                "
+          >
+            Projects
+          </NavLink>
         </div>
 
-        {/* --- RIGHT STACK (Automated Infinite Loop) --- */}
+        {/* RIGHT STACK */}
         <div
           className="
-            relative flex w-full items-center justify-center -mr-50
-            h-[500px] sm:h-[600px] md:h-[700px] lg:h-[850px] lg:w-[55%]
-            pointer-events-none /* Prevents user clicks from interrupting the flow */
-          "
+        relative
+        flex
+        w-full
+        items-center
+        justify-center
+
+        h-[420px]
+
+        sm:h-[520px]
+
+        md:h-[650px]
+
+        lg:h-[850px]
+        lg:w-[55%]
+ml-30
+        lg:-mr-24
+
+        xl:-mr-40
+
+        pointer-events-none
+      "
           style={{ perspective: "2200px" }}
         >
           {projects.map((project, index) => {
             const isActive = activeIndex === index;
 
-            // Base position in the stack
             const stackedY =
               screenWidth < 640
                 ? index * 18
@@ -376,18 +641,15 @@ const ProjectStack = () => {
               <motion.div
                 key={project.id}
                 animate={{
-                  // Keep it in 3D perspective at all times
                   rotateX: 55,
                   rotateZ: -15,
 
-                  // If active, slide it up and left diagonally from its spot
                   y: isActive ? stackedY - 40 : stackedY,
+
                   x: isActive ? stackedX - 50 : stackedX,
 
-                  // Slight scale for emphasis
                   scale: isActive ? 1.05 : 1,
 
-                  // Keep normal z-index stacking
                   zIndex: projects.length - index,
                 }}
                 transition={{
@@ -396,18 +658,35 @@ const ProjectStack = () => {
                   damping: 15,
                   mass: 1,
                 }}
-                style={{ transformOrigin: "center center" }}
-                className={`
-                  absolute overflow-hidden rounded-[28px]
-                  shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)]
-                  ${project.color}
-                  w-[220px] h-[150px]
-                  sm:w-[300px] sm:h-[200px]
-                  md:w-[420px] md:h-[280px]
-                  lg:w-[520px] lg:h-[340px]
-                `}
+                style={{
+                  transformOrigin: "center center",
+                }}
+                className="
+              absolute
+              overflow-hidden
+              rounded-[28px]
+
+              border
+              border-white/10
+
+              bg-[#071f24]
+
+              shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)]
+
+              w-[220px]
+              h-[150px]
+
+              sm:w-[300px]
+              sm:h-[200px]
+
+              md:w-[420px]
+              md:h-[280px]
+
+              lg:w-[520px]
+              lg:h-[340px]
+            "
               >
-                {/* Optional: You can keep videos auto-playing when they pop out */}
+                {/* Video */}
                 <AnimatePresence>
                   {isActive && (
                     <motion.video
@@ -425,26 +704,63 @@ const ProjectStack = () => {
                   )}
                 </AnimatePresence>
 
-                <div className="absolute inset-0 bg-black/30" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-[#00181C]/50" />
+
+                {/* Pink Glow */}
+                <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-[#FF4E75]/20 blur-3xl" />
 
                 {/* TEXT */}
                 <div className="relative flex h-full flex-col justify-between p-5 md:p-8">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] uppercase tracking-[3px] text-white/60 md:text-xs">
+                    <span
+                      className="
+                    text-[10px]
+                    uppercase
+                    tracking-[3px]
+                    text-[#FF4E75]
+
+                    md:text-xs
+                  "
+                    >
                       {project.subtitle}
                     </span>
-                    <span className="text-[10px] text-white/60 md:text-xs">
+
+                    <span className="text-[10px] text-white/50 md:text-xs">
                       {project.year}
                     </span>
                   </div>
+
                   <div>
-                    <h3 className="max-w-[80%] text-lg font-bold leading-tight text-white sm:text-2xl md:text-3xl">
+                    <h3
+                      className="
+                    max-w-[80%]
+                    font-['Bebas_Neue',_sans-serif]
+                    text-2xl
+                    leading-[0.9]
+                    tracking-tight
+                    text-[#FF4E75]
+
+                    sm:text-3xl
+
+                    md:text-4xl
+                  "
+                    >
                       {project.title}
                     </h3>
                   </div>
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/10 to-purple-500/10 opacity-0 transition duration-500 group-hover:opacity-100" />
+                {/* Hover Gradient */}
+                <div
+                  className="
+                absolute
+                inset-0
+                bg-gradient-to-tr
+                from-[#FF4E75]/10
+                to-transparent
+              "
+                />
               </motion.div>
             );
           })}

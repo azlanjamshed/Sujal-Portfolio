@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.active {
+    color: #FF4E75;
+}
+
+/* body {
+    cursor: none;
+} */
