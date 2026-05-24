@@ -6,27 +6,32 @@ const faqs = [
   {
     question: "What services do you provide?",
     answer:
-      "I specialize in cinematic video editing, motion graphics, creative direction, UI animations, and premium web experiences.",
+      "I create product-focused animations, UI motion, and high-impact video content designed to make ideas clear, engaging, and easy to understand.",
   },
   {
-    question: "Do you work with international clients?",
+    question: "How do I start working with you?",
     answer:
-      "Yes, I collaborate with creators, startups, and brands worldwide through remote communication and online meetings.",
+      "It starts with a quick call or message. We’ll discuss your goals and I’ll guide you on the best approach to bring your idea to life.",
   },
   {
-    question: "What software and tools do you use?",
+    question: "How long does a project take?",
     answer:
-      "I mainly use After Effects, Premiere Pro, Blender, React, Tailwind CSS, Framer Motion, and modern creative tools.",
+      "Timelines depend on the scope, but most projects are completed within a few days to a couple of weeks. A clear timeline is shared before we begin.",
   },
   {
-    question: "How long does a project usually take?",
+    question: "Do you provide revisions?",
     answer:
-      "Project timelines vary depending on complexity, but most projects are completed within 1–3 weeks.",
+      "Yes — I include revisions to make sure the final result matches your vision and feels right.",
   },
   {
-    question: "Can I request revisions?",
+    question: "What softwares do you use?",
     answer:
-      "Absolutely. Revisions are included to ensure the final work perfectly matches your vision and expectations.",
+      "I primarily work with After Effects and Premiere Pro for animation and editing.",
+  },
+  {
+    question: "What is your pricing structure?",
+    answer:
+      "Pricing depends on the complexity and type of project. I’ll provide a clear, tailored quote after understanding your requirements.",
   },
 ];
 
