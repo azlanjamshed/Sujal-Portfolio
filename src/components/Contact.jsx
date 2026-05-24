@@ -142,6 +142,13 @@ import { motion } from "framer-motion";
 import sujal from "../assets/sujal.png";
 
 const Contact = () => {
+  const socials = [
+    {
+      icon: FaInstagram,
+      link: "https://www.instagram.com/_sujal.aep?utm_source=qr&igsh=MTB5ZWhtNnNrOGl5bQ==",
+    },
+    { icon: FaBehance, link: "https://www.behance.net/" },
+  ];
   return (
     <section
       id="contact"
@@ -318,9 +325,12 @@ const Contact = () => {
               lg:justify-start
             "
           >
-            {[FaInstagram, FaBehance, FaEnvelope].map((Icon, index) => (
+            {socials.map((social, index) => (
               <motion.a
                 key={index}
+                href={social.link}
+                target="_blank"
+                rel="noreferrer"
                 whileHover={{
                   y: -8,
                   scale: 1.08,
@@ -353,7 +363,7 @@ const Contact = () => {
                   shadow-[0_10px_30px_rgba(0,0,0,0.25)]
                 "
               >
-                <Icon />
+                <social.icon />
               </motion.a>
             ))}
           </div>
