@@ -24,7 +24,7 @@ export const project = [
   {
     id: 3,
     title: "Bart Campaign",
-    category: "Short Form Content",
+    category: "UI Motion",
     description:
       "High-energy short-form promotional edit optimized for engagement and retention.",
     year: "2025",
@@ -35,7 +35,7 @@ export const project = [
   {
     id: 4,
     title: "Trading Reel",
-    category: "Saas Animation",
+    category: "UI Motion",
     description:
       "Cinematic trading platform advertisement with premium motion graphics.",
     year: "2025",
@@ -57,7 +57,7 @@ export const project = [
   {
     id: 6,
     title: "Gemini Ad",
-    category: "Short Form Content",
+    category: "Saas Animation",
     description:
       "Short-form cinematic advertisement designed for social media campaigns.",
     year: "2026",

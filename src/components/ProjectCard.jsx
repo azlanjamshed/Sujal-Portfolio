@@ -100,7 +100,7 @@ const ProductCard = ({ product }) => {
       {/* CONTENT */}
       <div className="p-6">
         {/* TITLE */}
-        <div className="mb-4 flex items-start justify-between gap-4">
+        {/* <div className="mb-4 flex items-start justify-between gap-4">
           <h3
             className="
               font-['Bebas_Neue',_sans-serif]
@@ -113,7 +113,7 @@ const ProductCard = ({ product }) => {
             {product.title}
           </h3>
 
-          {/* ICON */}
+          
           <motion.div
             whileHover={{
               rotate: 45,
@@ -144,7 +144,7 @@ const ProductCard = ({ product }) => {
           >
             <FiArrowUpRight size={20} />
           </motion.div>
-        </div>
+        </div> */}
 
         {/* DESCRIPTION */}
         <p

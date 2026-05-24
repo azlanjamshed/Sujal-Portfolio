@@ -318,7 +318,7 @@ const About = () => {
             "
           >
             <p className="text-xs uppercase text-center tracking-[4px] text-[#FF4E75]">
-              Creative Designer
+              Video Editor
             </p>
           </motion.div>
         </motion.div>
