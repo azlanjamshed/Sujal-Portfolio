@@ -105,6 +105,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import FloatingElements from "./FloatingElements";
 
 const Home = () => {
   return (
@@ -134,6 +135,9 @@ const Home = () => {
       {/* Main Content */}
       <div className="relative z-10 flex w-full items-center justify-center">
         {/* Main Heading */}
+        {/* <div className="relative w-full h-screen">
+          <FloatingElements />
+        </div> */}
         <motion.h1
           initial={{
             opacity: 0,
